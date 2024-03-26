@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <table border="1">
+            <tr><th>キー</th><th>押されているかどうか</th></tr>
+            <tr><td>Enter</td><td>{{lk.isPressEtcKey.enter ? "はい" : "いいえ"}}</td></tr>
+            <tr><td>スペース</td><td>{{lk.isPressEtcKey.space ? "はい" : "いいえ"}}</td></tr>
+            <tr><td>Ctrl</td><td>{{lk.isPressEtcKey.ctrl ? "はい" : "いいえ"}}</td></tr>
+            <tr><td>Alt</td><td>{{lk.isPressEtcKey.alt ? "はい" : "いいえ"}}</td></tr>
+            <tr><td>Shift</td><td>{{lk.isPressEtcKey.shift ? "はい" : "いいえ"}}</td></tr>
+        </table>
+        <div class="arrowbox">
+            <b v-show="lk.isPressEtcKey.upArrow"    class="up">↑</b>
+            <b v-show="lk.isPressEtcKey.downArrow"  class="down">↓</b>
+            <b v-show="lk.isPressEtcKey.leftArrow"  class="left">←</b>
+            <b v-show="lk.isPressEtcKey.rightArrow" class="right">→</b>
+        </div>
+        <p v-for="i in lk.pressKeyArray">{{i}}</p>
+    </div>
+    <script src="libkey.min.js"></script>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                lk: new libkey()
+            }
+        }).lk.ondown = e=>console.log(e);
+    </script>
+</body>
+</html>
