@@ -1,0 +1,21 @@
+{
+  "name": "libkey",
+  "description": "keyboard state as object.",
+  "version": "0.0.0",
+  "module": "src/index.ts",
+  "type": "module",
+  "devDependencies": {
+    "bun": "^1.1.43",
+    "esbuild": "^0.24.2"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "scripts": {
+    "build": "tsc && bun run build.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/TNTSuperMan/libkey"
+  }
+}
