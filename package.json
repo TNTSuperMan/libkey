@@ -1,7 +1,7 @@
 {
   "name": "libkey",
   "description": "keyboard state as object.",
-  "version": "0.0.2",
+  "version": "0.0.3",
 
   "module": "dist/esm.js",
   "main": "dist/cjs.js",
