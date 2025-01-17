@@ -12,13 +12,13 @@ export const useLibkey = (target: HTMLElement): {
     const onkeydown = (e: KeyboardEvent) => {
         updateMetas(e, state);
         updateArrows(e, state, true);
-        state.keys.add(e.key);
+        state.keys.add(e.code);
         onupdates.forEach(e=>e(state));
     }
     const onkeyup = (e: KeyboardEvent) => {
         updateMetas(e, state);
         updateArrows(e, state, false);
-        if(state.keys.has(e.key)) state.keys.delete(e.key);
+        if(state.keys.has(e.code)) state.keys.delete(e.code);
         onupdates.forEach(e=>e(state));
     }
     target.addEventListener("keydown", onkeydown);
