@@ -7,7 +7,7 @@ export const useLibkey = (target: HTMLElement): {
     onupdate: (e: (e: State) => void) => void,
     destroy: ()=>void,
 } => {
-    const state: State = structuredClone(defaultState);
+    const state: State = defaultState();
     const onupdates: ((e: State) => void)[] = [];
     const onkeydown = (e: KeyboardEvent) => {
         updateMetas(e, state);

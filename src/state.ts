@@ -8,9 +8,9 @@ export type State = {
         up: boolean,
         down: boolean
     },
-    keys: string[]
+    keys: Set<string>
 };
-export const defaultState: State = {
+export const defaultState: () => State = () => ({
     ctrl: false,
     alt: false,
     shift: false,
@@ -20,5 +20,5 @@ export const defaultState: State = {
         up: false,
         down: false
     },
-    keys: []
-};
+    keys: new Set
+});
